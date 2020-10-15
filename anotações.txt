@@ -1,0 +1,50 @@
+// Rota = conjunto
+// Recurso - usuário
+
+// Métodos HTTP = GET, POST, PUT, DELETE
+// Parâmetros
+
+// GET = Buscar uma informação (lista, item)
+// POST = Criando uma informação
+// PUT = Editando uma informação
+// DELETE = Deletando uma informação
+
+// Query Params: http://localhost:3333/users?search=thales
+// Route Params: http://localhost:3333/users/1 (identificar um recurso)
+// Body: http://localhost:3333/users/1 (identificar um recurso)
+
+// para executar comando typescript com o node, é preciso instalar uma biblioteca: npm install ts-node -D
+// depois desse pacote instalado, para rodar o node.js, vc utiliza npx ts-node src/server.ts
+// o -D significa que é dependencia para desenvolvimento.
+// npx tsc --init (para criar o arquivo tsconfig.json) para funcionar o typescript
+// usar comando npm install ts-node-dev -D (para instalar um pacote que fica observando o nosso codigo e nao precisamos reiniciar toda hr)
+// depois desse pacote instalado, para rodar o node.js, vc utiliza npx ts-node-dev src/server.ts
+
+// para facilitar na hora de rodar servidor, entramos no package.json e criamos um script chamado "dev" e colocamos alguns comandos ali para
+// facilitar na hora de rodar o servidor, deixando o comando de inicialização como npm run dev
+
+// Driver nativo, Query builder (KNEX), ORM (Object Relational Mapping)
+
+// Quando utilizamos o Query Builder ou ORM, não precisamos alterar nada na nossa aplicação, eles integram com quase todos os bancos de dados SQL
+
+// Comando utilizado para dar os comandos para as migrations npx typeorm (foi criado um script no package.json para isso)
+
+// Para criar uma migration -> npx typeorm migration:create -n create_orphanages
+
+// Para rodar a migration -> npm run typeorm migration:run
+
+// Para reverter a migration -> npm run typeorm migration:revert
+
+// Parte 2. 45min35seg
+
+// Nos migrations, ele cria uma class UP e uma DOWN
+
+// UP
+// realiza alterações
+// criar tabela, criar um novo campo, deletar algum campo
+
+// DOWN
+// desfaz o que foi feito no up
+
+// Mudar a configuração do tsconfig.json, descomentar a linha strictPropertyInitialization e mudar de TRUE para FALSE, pois dessa forma
+// é possível definir o nome das variáveis na classe sem colocar nenhum valor inicial.
