@@ -10,7 +10,7 @@ export default {
         const orphanagesRepository = getRepository(Orphanage);
 
         const orphanages = await orphanagesRepository.find({
-            relations: ['images']
+            relations: ['images'],
         });
 
         return response.json(orphanageView.renderMany(orphanages));
@@ -55,7 +55,7 @@ export default {
             instructions,
             opening_hours,
             open_on_weekends: open_on_weekends === 'true',
-            images
+            images,
         };
 
         const schema = Yup.object().shape({
@@ -68,7 +68,7 @@ export default {
             open_on_weekends: Yup.boolean().required(),
             images: Yup.array(
                 Yup.object().shape({
-                    path: Yup.string().required()
+                    path: Yup.string().required(),
                 })
             )
         });
